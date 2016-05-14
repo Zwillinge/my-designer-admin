@@ -1,0 +1,212 @@
+/* reset */
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var, input {margin:0;padding:0;}
+blockquote, q {quotes:none}
+table, table td {padding:0;border:none;border-collapse:collapse} 
+a { outline:none; cursor: pointer; }
+:focus{outline:none;}
+:active{outline:none; }
+img{ border: none;}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {
+    display: block;
+}
+
+
+@accentColor: #41a96f;
+@focusColor: #eec528;
+@barColor: #546E7A; 
+@mainColor: #ECEFF1;
+@editorColor:#ECEFF1;
+
+.buttonStyle(@color, @fontColor, @borderColor){
+	border-color: @borderColor !important;
+	background-color: @color !important;
+	color: @fontColor !important;
+}
+
+
+////////////////////////
+//      Top line      //
+////////////////////////
+
+.app-designer-user{
+	color: #eee;
+	text-align: right;
+	.photo{
+		width: 28px;
+		height: 28px;
+		background-color: rgba(255,255,255,0.4);
+		background-size:100%;
+		text-align: center;
+		display: inline-block;
+		border-radius: 50%;
+		
+		.webix_icon{
+
+			color: @barColor;
+		}
+	}
+	.name{
+		padding: 0 10px;
+		line-height: 28px;
+	}
+	.fa-angle-down{
+		font-size: 14px;
+		margin-left:-17px;
+		line-height: 28px;
+	}
+}
+.app-top-panel{
+	background-color: @barColor;
+}
+.app-top-template, .app-top-template a{
+	background-color: #546E7A;
+	text-align: right;
+	line-height:25px;
+	color:white;
+}
+.app-top-template a{
+	.buttonStyle(#48b677, #fff, #48b677);
+	padding:2px 10px;
+	border-radius: 2px;
+}
+.window.webix_layout_toolbar{
+	background-color: @barColor;
+	.webix_el_icon .webix_icon_button:hover{
+		background: transparent;
+	}
+	.webix_icon_button .webix_icon{
+		font-size: 17px;
+		margin-top:5px;
+	}
+}
+.app-top-panel .webix_view, .app-top-panel .webix_list_item{
+	font-size: 14px;
+}
+.app-top-panel .webix_list_item{
+	background-color: transparent !important;
+	border-right: none;
+	border-radius:0;
+	color: #fff;
+	line-height: 35px;
+	padding:0 20px;
+}
+.app-top-panel .webix_list_item:first-child,
+.app-top-panel .webix_list_item:last-child{
+	border-radius:0;
+}
+
+.app-top-panel .webix_list_item:first-child .webix_icon{
+	width: 20px;
+	text-align: center;
+}
+
+.app-top-panel .webix_list_item .webix_icon{
+	font-size: 17px;
+	float: left;
+	line-height: 35px;
+	width: 25px;
+}
+.app-top-panel .webix_list_item.webix_selected{
+	background-color: rgba(255,255,255,0.15) !important;
+	color: #fff;
+}
+
+.status_message{
+	text-align:center;
+	.webix_icon{
+		font-size: 15px;
+		line-height: 28px;
+		width:12px;
+	}
+}
+
+////////////////////////
+//      Dashboard     //
+////////////////////////
+
+.webix_sidebar .webix_tree_item.webix_selected{
+	background-color: #78909c;
+	span{
+		background-color: #78909c;
+	}
+}
+
+.dash-template div{
+	padding:5px 20px;
+	li{
+		list-style-type: none;
+		padding:0px 5px;
+	}
+	
+}
+
+.app-form{
+	.webix_el_text input, .webix_el_richselect .webix_inp_static{
+		border-radius: 0;
+	}
+	input:focus{
+		border:@focusColor;
+		box-shadow: 0 0 1px #7993B9 inset;
+	}
+
+}
+
+
+
+////////////////////////
+//   Segment buttons  //
+////////////////////////
+
+@segmentColor: @barColor;// #2980b9;
+.editor\:segmented{
+	.webix_segment_0 {
+		border-radius: 2px 0 0 2px;
+	}
+	.webix_segment_N {
+		border-radius: 0 2px 2px 0;
+	}
+	.webix_segment_0,	.webix_segment_1,	.webix_segment_N {
+		border-color: @segmentColor;
+		background: #fff;
+		color: @segmentColor;
+		font-size: 14px;
+		margin-left:0;
+	}
+	.webix_segment_0.webix_selected,	.webix_segment_1.webix_selected,	.webix_segment_N.webix_selected{
+		background: @segmentColor;
+		color: #fff;
+	}
+}
+
+.app\:login-form{
+	.webix_header>div{
+		background-color: @mainColor;
+		color: #666666;
+	}
+	input{
+		border-radius:0 !important;
+	}
+	input:focus{
+		border-color: @focusColor;
+	}
+	button{
+		font-size: 14px !important;
+		border-radius:2px !important;
+
+	}
+}
+.app\:button button{
+	font-size: 14px !important;
+	border-radius:2px !important;
+	background: @accentColor !important;
+	border-color: @accentColor !important;
+}
+
+.app-design-selector .webix_selected, 
+.app-dash-designs .webix_selected,
+.webix_drag_zone .webix_selected{
+	background: #78909C;
+}
+
+    
